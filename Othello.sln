@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Othello.Model", "Othello.Model\Othello.Model.csproj", "{7FD6BA6F-8901-435E-AB42-8584234EC0E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Othello.Runner", "Othello.Runner\Othello.Runner.csproj", "{1920ED9E-BCA5-41CA-8287-4D7DEDE58D70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Othello.View", "Othello.View\Othello.View.csproj", "{BD994A72-760C-4351-84B3-6E497A5F2889}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Othello.Controller", "Othello.Controller\Othello.Controller.csproj", "{5320A910-149C-47DC-B8CA-BA1793D549BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FD6BA6F-8901-435E-AB42-8584234EC0E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FD6BA6F-8901-435E-AB42-8584234EC0E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FD6BA6F-8901-435E-AB42-8584234EC0E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FD6BA6F-8901-435E-AB42-8584234EC0E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1920ED9E-BCA5-41CA-8287-4D7DEDE58D70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1920ED9E-BCA5-41CA-8287-4D7DEDE58D70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1920ED9E-BCA5-41CA-8287-4D7DEDE58D70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1920ED9E-BCA5-41CA-8287-4D7DEDE58D70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD994A72-760C-4351-84B3-6E497A5F2889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD994A72-760C-4351-84B3-6E497A5F2889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD994A72-760C-4351-84B3-6E497A5F2889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD994A72-760C-4351-84B3-6E497A5F2889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5320A910-149C-47DC-B8CA-BA1793D549BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5320A910-149C-47DC-B8CA-BA1793D549BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5320A910-149C-47DC-B8CA-BA1793D549BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5320A910-149C-47DC-B8CA-BA1793D549BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
