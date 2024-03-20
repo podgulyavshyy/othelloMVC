@@ -6,7 +6,7 @@ public class Game
 
     private readonly Player firstPlayer;
 
-    private readonly Player secondPlayer;
+    private Player secondPlayer;
 
     private Cell[,] field;
 
@@ -30,15 +30,17 @@ public class Game
         _view = view;
     }
 
-    public void StartGame()
+    public void StartGame(bool botGame)
     {
         CurrentPlayer = firstPlayer;
+        secondPlayer.isBot = true;
         PrepareField();
         _view.ShowView(field);
     }
 
     public void MakeMove(int x, int y)
     {
+        
         if (field == null)
         {
             throw new Exception("Game wasn't started - call StartGame() at first'");
@@ -70,8 +72,16 @@ public class Game
         if (IsEnded)
         {
             Console.WriteLine("Winner is " + Winner.Name);
-            Console.WriteLine("Starting new game");
-            StartGame();
+            Console.WriteLine("Starting new game input bot or pvp");
+            string commandStart = Console.ReadLine();
+            if (commandStart == "bot")
+            {
+                StartGame(true);
+            }
+            else if (commandStart == "pvp")
+            {
+                StartGame(false);
+            }
         }
     }
 

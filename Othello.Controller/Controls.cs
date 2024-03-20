@@ -6,19 +6,26 @@ public class Controls
 {
     public void StartGame(Model.Game game)
     {
-        game.StartGame();
+        
+        string commandStart = Console.ReadLine();
+        if (commandStart == "bot")
+        {
+            game.StartGame(true);
+        }
+        else if(commandStart == "pvp")
+        {
+            game.StartGame(false);
+        }
         while (true)
         {
             string command = Console.ReadLine();
-            if (command == "bot")
+
+            var splitCommand = command.Split(" ");
+
+            game.MakeMove(int.Parse(splitCommand[0]), int.Parse(splitCommand[1]));
+            if (game.CurrentPlayer.isBot == true)
             {
                 game.MakeBotMove();
-            }
-            else
-            {
-                var splitCommand = command.Split(" ");
-
-                game.MakeMove(int.Parse(splitCommand[0]), int.Parse(splitCommand[1]));
             }
         }
     }
