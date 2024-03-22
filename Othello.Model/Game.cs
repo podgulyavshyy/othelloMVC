@@ -33,7 +33,10 @@ public class Game
     public void StartGame(bool botGame)
     {
         CurrentPlayer = firstPlayer;
-        secondPlayer.isBot = true;
+        if (botGame)
+        {
+            secondPlayer.isBot = true;
+        }
         PrepareField();
         _view.ShowView(field);
     }

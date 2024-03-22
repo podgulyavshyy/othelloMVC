@@ -25,6 +25,7 @@ public class Controls
             game.MakeMove(int.Parse(splitCommand[0]), int.Parse(splitCommand[1]));
             if (game.CurrentPlayer.isBot == true)
             {
+                Thread.Sleep(2000);
                 game.MakeBotMove();
             }
         }
