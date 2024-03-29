@@ -4,17 +4,20 @@ using System;
 
 public class Controls
 {
+    private bool isBotGame;
     public void StartGame(Model.Game game)
     {
         
         string commandStart = Console.ReadLine();
         if (commandStart == "bot")
         {
-            game.StartGame(true);
+            isBotGame = true;
+            game.StartGame();
         }
         else if(commandStart == "pvp")
         {
-            game.StartGame(false);
+            isBotGame = false;
+            game.StartGame();
         }
         while (true)
         {
@@ -23,10 +26,10 @@ public class Controls
             var splitCommand = command.Split(" ");
 
             game.MakeMove(int.Parse(splitCommand[0]), int.Parse(splitCommand[1]));
-            if (game.CurrentPlayer.isBot == true)
+            if (isBotGame == true)
             {
                 Thread.Sleep(2000);
-                game.MakeBotMove();
+                BotMoves.MakeBotMove(game);
             }
         }
     }

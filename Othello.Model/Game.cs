@@ -30,13 +30,9 @@ public class Game
         _view = view;
     }
 
-    public void StartGame(bool botGame)
+    public void StartGame()
     {
         CurrentPlayer = firstPlayer;
-        if (botGame)
-        {
-            secondPlayer.isBot = true;
-        }
         PrepareField();
         _view.ShowView(field);
     }
@@ -77,14 +73,6 @@ public class Game
             Console.WriteLine("Winner is " + Winner.Name);
             Console.WriteLine("Starting new game input bot or pvp");
             string commandStart = Console.ReadLine();
-            if (commandStart == "bot")
-            {
-                StartGame(true);
-            }
-            else if (commandStart == "pvp")
-            {
-                StartGame(false);
-            }
         }
     }
 
@@ -211,10 +199,6 @@ public class Game
         }
     }
 
-
-
-    
-
     protected Player GetOpponent(Player currentPlayer)
     {
         return currentPlayer == firstPlayer ? secondPlayer : firstPlayer;
@@ -268,40 +252,6 @@ public class Game
         {
             EndGame();
         }
-        /*
-        foreach (var row in GetAllRows())
-        {
-            var player = row[0].MarkedByPlayer;
-            if (player != null && row.All(cell => cell.MarkedByPlayer == player))
-            {
-                EndGame(player);
-                break;
-            }
-
-            if (row.Any(cell => cell.IsEmpty))
-            {
-                hasEmptyCells = true;
-            }
-        }
-
-        if (!hasEmptyCells)
-        {
-            EndGame();
-        }
-            
-        IEnumerable<List<Cell>> GetAllRows()
-        {
-            yield return new List<Cell> {field[0, 0], field[0, 1], field[0, 2]};
-            yield return new List<Cell> {field[1, 0], field[1, 1], field[1, 2]};
-            yield return new List<Cell> {field[2, 0], field[2, 1], field[2, 2]};
-                
-            yield return new List<Cell> {field[0, 0], field[1, 0], field[2, 0]};
-            yield return new List<Cell> {field[0, 1], field[1, 1], field[2, 1]};
-            yield return new List<Cell> {field[0, 2], field[1, 2], field[2, 2]};
-                
-            yield return new List<Cell> {field[0, 0], field[1, 1], field[2, 2]};
-            yield return new List<Cell> {field[0, 2], field[1, 1], field[2, 0]};
-        }*/
     }
 
     protected virtual void EndGame()
@@ -331,13 +281,13 @@ public class Game
         }
     }
 
-    private void SwitchPlayer()
+    public void SwitchPlayer()
     {
         CurrentPlayer = CurrentPlayer == firstPlayer ? secondPlayer : firstPlayer;
     }
     
     
-    public void MakeBotMove()
+    /*public void MakeBotMove()
     {
 
         List<(int, int)> validMoves = GetValidMoves();
@@ -354,9 +304,9 @@ public class Game
         (int x, int y) = validMoves[randomIndex];
 
         MakeMove(x, y);
-    }
+    }*/
 
-    private List<(int, int)> GetValidMoves()
+    public List<(int, int)> GetValidMoves()
     {
         List<(int, int)> validMoves = new List<(int, int)>();
 

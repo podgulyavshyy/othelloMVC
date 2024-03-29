@@ -1,7 +1,7 @@
 ﻿namespace Othello.View;
 using Othello.Model;
 
-public class Class1 : IView
+public class View : IView
 {
 
     private Cell[,] field; 
@@ -13,7 +13,7 @@ public class Class1 : IView
 
     public void FinishGame()
     {
-        Console.WriteLine("Game Finished");
+        Console.WriteLine("Game Finished"); // make show message instead
     }
 
     public void PrintField()
